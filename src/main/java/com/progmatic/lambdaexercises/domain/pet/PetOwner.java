@@ -48,6 +48,13 @@ public class PetOwner {
     public void setPets(List<Pet> pets) {
         this.pets = pets;
     }
+
+    @Override
+    public String toString() {
+        return "PetOwner{" + "name=" + name + ", age=" + age + ", sex=" + sex + ", pets=" + pets + '}';
+    }
+    
+    
     
     
 }

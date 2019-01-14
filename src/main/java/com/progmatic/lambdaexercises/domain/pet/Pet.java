@@ -37,6 +37,11 @@ public class Pet {
     public void setSpices(String spices) {
         this.spices = spices;
     }
+
+    @Override
+    public String toString() {
+        return "Pet{" + "name=" + name + ", age=" + age + ", spices=" + spices + '}';
+    }
     
     
 }
