@@ -22,6 +22,18 @@ public class PetStatistics {
         PetStatistics me = new PetStatistics();
         me.petOwners = DomainProducer.getPetOwners();
         System.out.println("Number of all animals:" + me.nrOfAllAnimals());
+
+        System.out.println("Children:");
+        me.children().stream().forEach(c -> System.out.println(c));
+
+        System.out.println("Children names:");
+        me.childrenNames().stream().forEach(name -> System.out.println(name));
+
+        System.out.println("Children upper names:");
+        me.childrenUpperNames().stream().forEach(name -> System.out.println(name));
+
+        System.out.println("sum age of owners: " + me.sumAgeOfOwners());
+
         Stream<String> peopleWhoHaveMoreAnimalsThan = me.peopleWhoHaveMoreAnimalsThan(2);
         System.out.println("People who have more animals than 2:");
         peopleWhoHaveMoreAnimalsThan.forEach(name -> System.out.println(name));
