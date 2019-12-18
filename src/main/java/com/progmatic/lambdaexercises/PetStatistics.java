@@ -73,8 +73,6 @@ public class PetStatistics {
         return 0;
     }
     
-    
-    
     public Stream<String> peopleWhoHaveMoreAnimalsThan(int nrOfAnimals){
         return null;
     }
