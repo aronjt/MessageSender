@@ -9,8 +9,8 @@ import com.progmatic.lambdaexercises.domain.DomainProducer;
 import com.progmatic.lambdaexercises.domain.indians.Indian;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -20,14 +20,18 @@ public class IndianStatistics {
 
     private List<Indian> indians;
 
+    public IndianStatistics(List<Indian> indians) {
+        this.indians = indians;
+    }
+
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        IndianStatistics me = new IndianStatistics();
-        me.indians = DomainProducer.getIndians();
-        System.out.println("Ennyi különböző eszköz szerepel a leltárban: " + me.nrOfTools());
+        IndianStatistics me = new IndianStatistics(DomainProducer.getIndians());
+        System.out.println("Ennyi eszköz szerepel a leltárban: " + me.nrOfTools());
         System.out.println("Ezek a különböző eszközök szerepelnek a leltárban: " + me.diffTools());
-        System.out.println("Az Apache törzs tagjainak száma: " + me.nrOfIndiansPerTribe("Apache"));
-        System.out.println("A legnépesebb indián törzs: " + me.mostPopularTibe());
+        String tribe = "Apache";
+        System.out.println("Az " + tribe + " törzs tagjainak száma: " + me.nrOfIndiansPerTribe(tribe));
         me.nrOfIndiansPerTribe();
+        System.out.println("A legnépesebb indián törzs: " + me.mostPopularTibe());
         System.out.println("A Seminole törzsben a ffi/nő arány: " + me.maleFemaleRatioPerTribe("Seminole"));
         System.out.println("A férfi-nő arány törzsenként:");
         me.maleFemaleRatio();
@@ -37,35 +41,57 @@ public class IndianStatistics {
     }
 
     public int nrOfTools() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
     public Set<String> diffTools() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
     public int nrOfIndiansPerTribe(String tribe) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
+    /**
+     * Write number of indians for each tribe to the system out.
+     * Every new tribe should be printed as a new line, and every line should contain
+     * tribename ': ' nrOfIndians
+     * E.g.
+     * Huron: 6
+     * Apache: 2
+     * Seminole: 4
+     */
     public void nrOfIndiansPerTribe() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
     public String mostPopularTibe() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
+    /**
+     *
+     * @param tribe
+     * @return the ratio of male / female, or -1 if there are no female indians in this tribe!
+     */
     public double maleFemaleRatioPerTribe(String tribe) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
+    /**
+     * Write male/female ratio for each tribe to the system out.
+     * Every new ratio should be printed as a new line, and every line should contain
+     *  {tribename} törzsben a ffi/nő arány: {ratio}
+     * E.g.
+     * Iroquois törzsben a ffi/nő arány: -1.0
+     * Seminole törzsben a ffi/nő arány: 3.0
+     */
     public void maleFemaleRatio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
     public String tribeWithMostTools(String tool) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException();
     }
 
 }
