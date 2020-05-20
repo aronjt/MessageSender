@@ -6,8 +6,17 @@
 package com.progmatic.lambdaexercises;
 
 import com.progmatic.lambdaexercises.domain.DomainProducer;
+import com.progmatic.lambdaexercises.domain.pet.Pet;
 import com.progmatic.lambdaexercises.domain.pet.PetOwner;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -15,12 +24,16 @@ import java.util.stream.Stream;
  * @author peti
  */
 public class PetStatistics {
-    
+
     private List<PetOwner> petOwners;
-    
+
+    public PetStatistics(List<PetOwner> petOwners) {
+        this.petOwners = petOwners;
+    }
+
     public static void main(String[] args) {
-        PetStatistics me = new PetStatistics();
-        me.petOwners = DomainProducer.getPetOwners();
+        PetStatistics me = new PetStatistics(DomainProducer.getPetOwners());
+
         System.out.println("Number of all animals:" + me.nrOfAllAnimals());
 
         System.out.println("Children:");
@@ -32,53 +45,69 @@ public class PetStatistics {
         System.out.println("Children upper names:");
         me.childrenUpperNames().stream().forEach(name -> System.out.println(name));
 
-        System.out.println("sum age of owners: " + me.sumAgeOfOwners());
-
+        System.out.println("\nHölgygazdák száma:" + me.nrOfFemaleOwners());
+        System.out.println("Sum age of owners: " + me.sumAgeOfOwners());
+        System.out.println("Number of all animals:" + me.nrOfAllAnimals());
         Stream<String> peopleWhoHaveMoreAnimalsThan = me.peopleWhoHaveMoreAnimalsThan(2);
         System.out.println("People who have more animals than 2:");
         peopleWhoHaveMoreAnimalsThan.forEach(name -> System.out.println(name));
-        
-        System.out.println("Number of distinct species: " + me.nrOfDistinctSpices());
+        System.out.println("\n\nNumber of distinct species: " + me.nrOfDistinctSpices());
+        System.out.println("\n\n concatenated name of pet owners: " + me.concatenatedNameOfPetOwners());
+
     }
-    
-    public int nrOfAllAnimals(){
-        return 0;
+
+
+    public int nrOfAllAnimals() {
+        throw  new UnsupportedOperationException();
     }
-    
+
     /**
-     * 
+     *
      * @return all the PetOwners who are under 18
      */
-    public List<PetOwner> children(){
-        return null;
+    public List<PetOwner> children() {
+        throw  new UnsupportedOperationException();
     }
-    
+
+    public long nrOfFemaleOwners() {
+        throw  new UnsupportedOperationException();
+    }
+
     /**
-     * 
+     *
      * @return all the names of the PetOwners who are under 18
      */
-    public List<String> childrenNames(){
-        return null;
+    public List<String> childrenNames() {
+        throw  new UnsupportedOperationException();
     }
-    
+
     /**
-     * 
-     * @return all the names (in uppercase format) of the PetOwners who are under 18
+     *
+     * @return all the names (in uppercase format) of the PetOwners who are
+     * under 18
      */
-    public List<String> childrenUpperNames(){
-        return null;
+    public List<String> childrenUpperNames() {
+        throw  new UnsupportedOperationException();
     }
-    
-    public int sumAgeOfOwners(){
-        return 0;
+
+    public int sumAgeOfOwners() {
+        throw  new UnsupportedOperationException();
     }
-    
-    public Stream<String> peopleWhoHaveMoreAnimalsThan(int nrOfAnimals){
-        return null;
+
+    public String concatenatedNameOfPetOwners() {
+        throw  new UnsupportedOperationException();
     }
-    
-    public int nrOfDistinctSpices(){
-        return 0;
+
+    public List<Pet> allPets() {
+        throw  new UnsupportedOperationException();
     }
-    
+
+    public Stream<String> peopleWhoHaveMoreAnimalsThan(int nrOfAnimals) {
+        throw  new UnsupportedOperationException();
+    }
+
+    public int nrOfDistinctSpices() {
+        throw  new UnsupportedOperationException();
+    }
+
 }
