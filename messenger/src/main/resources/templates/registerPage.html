@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Register</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/envelope-icon.png"/>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post" data-th-action="@{/register}" data-th-object="${newUser}">
+        <h2 class="form-signin-heading">Register</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username"  class="form-control" placeholder="Username" data-th-field="*{username}" required autofocus>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="text" id="password" class="form-control" placeholder="Password" data-th-field="*{password}" required>
+        </p>
+        <p>
+            <label for="email" class="sr-only">E-mail</label>
+            <input type="text" id="email" class="form-control" placeholder="E-mail" data-th-field="*{email}" required>
+        </p>
+        <p>
+            <label for="birthDate" class="sr-only">Birth of date</label>
+            <input type="text" id="birthDate" class="form-control" placeholder="YYYY-MM-DD" data-th-fielde="*{birthDate}" required>
+        </p>
+        <input name="_csrf" type="hidden" value="e2e2ed37-301b-4169-865e-ec34e89a930e" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    </form>
+</div>
+</body></html>

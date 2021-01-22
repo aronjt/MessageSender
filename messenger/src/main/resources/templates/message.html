@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Üzenetek</title>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Üzenetek</h2>
+        <table>
+            <thead>
+            <tr>
+                <td>Üzenet</td>
+                <td>Küldte</td>
+                <td>Ekkor</td>
+            </tr>
+            </thead>
+            <tr data-th-each="message: ${messages}">
+                <td data-th-text="${message.getMessage}"></td>
+                <td data-th-text="${message.getFrom}"></td>
+                <td data-th-text="${message.getTime}"></td>
+                <td data-th-text="${message.getTo}"></td>
+                <td><a data-th-href="@{'/uzenetek/' + ${message.getId}}">Üzenet</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

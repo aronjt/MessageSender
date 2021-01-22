@@ -1,11 +1,14 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
     <h2>Üdv újra itt!</h2>
     <div data-th-text="${message}"></div>
+    <a data-th-href="@{/dobokocka}">Dobókocka</a>
+    <a data-th-href="@{/uzenet}">Üzenetek</a>
 </div>
 </body>
 </html>
