@@ -29,6 +29,10 @@ public class MessageService {
         messageList.add(message);
     }
 
+    public void deleteMessage(Message message) {
+        message.setDeleted();
+    }
+
     public String getSenderName() {
         return senderName;
     }

@@ -66,6 +66,12 @@ public class MessageController {
         return "redirect:/home";
     }
 
+    @PostMapping(path = "/delete")
+    public String deleteMessage(@ModelAttribute("deleteMessage") Message message) {
+        messageService.deleteMessage(message);
+        return "redirect:/home";
+    }
+
     @PostMapping(path = "sortbyfrom")
     public String sortByFrom(){
         return null;

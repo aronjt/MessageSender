@@ -24,7 +24,9 @@ public class Message {
 
     @DateTimeFormat(pattern = "yyyy/MM/dd HH:mm")
     private LocalDateTime date;
+
     private int id;
+    private String  isDeleted = "Not deleted";
 
     public Message(String message, String from, String to) {
         this.message = message;
@@ -71,5 +73,13 @@ public class Message {
 
     public void setTo(String to) {
         this.to = to;
+    }
+
+    public void setDeleted() {
+        isDeleted = "T";
+    }
+
+    public String isDeleted() {
+        return isDeleted;
     }
 }

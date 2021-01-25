@@ -12,11 +12,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @Controller
 public class HomeController {
 
-   /* @RequestMapping(value = {"/", "/home"}, method = GET)
+    @RequestMapping(value = "/greet", method = GET)
     public String home(Model model){
         model.addAttribute("message", "hello");
         return "greeting";
-    }*/
+    }
 
     @RequestMapping(value = "/dobokocka", method = GET)
     public String dice(@RequestParam(name = "sides", required = false, defaultValue = "6") int sides, Model model){

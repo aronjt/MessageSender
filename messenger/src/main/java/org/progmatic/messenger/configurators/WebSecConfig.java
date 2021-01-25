@@ -19,8 +19,8 @@ public class WebSecConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("user").
-                password("password").roles("ADMIN").build());
+        manager.createUser(User.withUsername("user").password("password").roles("USER").build());
+        manager.createUser(User.withUsername("admin").password("admin").roles("ADMIN").build());
         return manager;
     }
 
@@ -37,13 +37,14 @@ public class WebSecConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                     .loginPage("/login")
                     .loginProcessingUrl("/login")
-                    .usernameParameter("username")
-                    .passwordParameter("password")
                     .permitAll()
-                .and()
-                    .authorizeRequests()
+                    .and()
+                .logout()
+                    .logoutSuccessUrl("/login?logout")
+                    .permitAll()
+                    .and()
+                .authorizeRequests()
                     .antMatchers("/", "/home", "/register").permitAll()
-                //    .antMatchers("newmessage").hasRole("ADMIN")
                     .anyRequest().authenticated();
 
     }
